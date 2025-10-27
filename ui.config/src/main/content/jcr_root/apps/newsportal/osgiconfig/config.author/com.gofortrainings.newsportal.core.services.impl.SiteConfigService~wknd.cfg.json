@@ -1,0 +1,7 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "contactEmail":"wknd@gmail.com",
+  "siteRootPath":"/content/wknd",
+  "siteUrl":"https://www.wknd.com",
+  "siteName":"Wknd"
+}

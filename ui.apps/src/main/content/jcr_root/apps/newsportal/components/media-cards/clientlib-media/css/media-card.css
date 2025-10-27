@@ -1,0 +1,260 @@
+.media-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(0, 95, 0);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.media-block {
+  width: 460px;
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.media-block img,
+.media-block video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-content {
+  background: white;
+  padding: 1rem;
+  text-align: left;
+  height: 150px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.media-content h3 {
+  font-size: 1rem;
+  color: #003b71;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.media-content .desc {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.learn-more {
+  font-size: 0.9rem;
+  color: white;
+  background-color: orangered;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: darkorange;
+}
+
+/* Hover Overlay - Desktop Only */
+.media-block:hover .media-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+  z-index: 2;
+  border-radius: 0;
+  padding: 2rem 1rem 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.media-block:hover .media-content h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+/* Updated scroll height and color */
+.media-block:hover .desc {
+  color: white;
+  overflow-y: auto;
+  max-height: 250px;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  line-height: 1.6;
+}
+
+/* Orangered Scrollbar */
+.media-block:hover .desc::-webkit-scrollbar {
+  width: 6px;
+}
+.media-block:hover .desc::-webkit-scrollbar-thumb {
+  background-color: orangered;
+  border-radius: 10px;
+}
+.media-block:hover .desc {
+  scrollbar-color: orangered transparent;
+  scrollbar-width: thin;
+}
+
+/* Play Button */
+.play-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  z-index: 4;
+  cursor: pointer;
+  display: none;
+  color: orangered; /* <-- Set video icon color here */
+}
+
+
+/* Play Button */
+.play-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  z-index: 4;
+  cursor: pointer;
+  display: none;
+}
+
+/* Show play button only on video */
+.media-block.video:hover .play-btn {
+  display: block;
+}
+
+/* Remove ▶ from title, show title below */
+.media-block.video:hover .media-content h3::before {
+  content: none;
+}
+.media-block.video:hover .media-content h3 {
+  margin-top: 3rem; /* Push title below play icon */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .media-section {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .media-block {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    box-shadow: none;
+    height: auto;
+  }
+
+  .media-wrapper {
+    height: 200px;
+  }
+
+  .media-content {
+    position: static !important;
+    background: white !important;
+    color: black !important;
+    padding: 1rem !important;
+    height: auto !important;
+    border-radius: 0 0 12px 12px !important;
+    text-align: left;
+  }
+
+  .media-content h3 {
+    color: #003b71 !important;
+    font-size: 1rem !important;
+    margin: 0 0 0.5rem !important;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .desc {
+    color: #333 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    line-height: 1.6;
+    text-align: left;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+  }
+
+  .media-block:hover .media-content,
+  .media-block:hover .desc {
+    all: unset;
+  }
+
+  .play-btn {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: block !important;
+  }
+
+  .media-block.video:hover .play-btn {
+    display: block !important;
+  }
+
+  .learn-more {
+    display: none !important;
+  }
+}

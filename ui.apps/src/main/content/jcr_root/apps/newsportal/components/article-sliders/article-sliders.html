@@ -1,0 +1,12 @@
+<sly data-sly-use.articleSlider="com.gofortrainings.newsportal.core.models.ArticleSliderModel"> </sly>
+         <div class="row tn-slider"  data-sly-list.slider="${articleSlider.sliders}">
+              <div class="">
+                  <div class="tn-img">
+                     <img src="${slider.sliderImg}" />
+                       <div class="tn-title">
+                         <a href="${slider.pagesLinks}.html">${slider.sliderTitle}</a>
+                       </div>
+                  </div>
+              </div>
+        </div>
+

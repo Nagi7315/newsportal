@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Media Cards Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <mainTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <mediaTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Media"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the main section title for the media cards."
+                                fieldLabel="Section Title"
+                                name="./sectionTitle"/>
+                            <mediaField
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldDescription="Add one or more media cards with details."
+                                fieldLabel="Media Field">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./mediaItems">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <general
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="General"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <mediaList
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    class="cq-dialog-dropdown-showhide"
+                                                    cq-dialog-dropdown-showhide-target=".test-options-showhide-target"
+                                                    fieldDescription="Choose whether this card will use an image or video."
+                                                    fieldLabel="Select Media Type"
+                                                    name="./selectMediaType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <image
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Image"
+                                                            value="image"/>
+                                                        <video
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Video"
+                                                            value="video"/>
+                                                    </items>
+                                                </mediaList>
+                                            </items>
+                                        </general>
+                                        <media
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Media"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+                                            margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <image
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container"
+                                                            class="hide test-options-showhide-target"
+                                                            showhidetargetvalue="image">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <imageFields
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    class="media-type-toggle cq-dialog-dropdown-showhide-target"
+                                                                    data-showhidetargetvalue="image">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <imageSrc
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                            fieldDescription="Browse and select an image from the DAM."
+                                                                            fieldLabel="Image Path"
+                                                                            name="./imagePath"
+                                                                            rootPath="/content/dam"/>
+                                                                        <imageAltText
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter alt text for the image to support accessibility."
+                                                                            fieldLabel="Image Alt Text"
+                                                                            name="./imageAltText"/>
+                                                                        <title
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the title text for the media card."
+                                                                            fieldLabel="Image Title"
+                                                                            name="./ImageTitle"/>
+                                                                        <description
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                                            fieldDescription="Enter a short description for the media card."
+                                                                            fieldLabel="ImageDescription"
+                                                                            name="./ImageDescription"/>
+                                                                        <buttonText
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the label for the card's CTA button."
+                                                                            fieldLabel="Button Text"
+                                                                            name="./imageButtonLabel"/>
+                                                                        <buttonLink
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                            fieldDescription="Provide a path or URL for the CTA button."
+                                                                            fieldLabel="Button Link"
+                                                                            name="./imageButtonLink"/>
+                                                                        <open-new-tab
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            checked="${true}"
+                                                                            fieldDescription="Check to open the link in a new browser tab."
+                                                                            name="./imageOpenInNewTab"
+                                                                            text="Open New Tab"
+                                                                            uncheckedValue="false"
+                                                                            value="{Boolean}true"/>
+                                                                    </items>
+                                                                </imageFields>
+                                                            </items>
+                                                        </image>
+                                                        <video
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container"
+                                                            class="hide test-options-showhide-target foundation-layout-util-vmargin"
+                                                            showhidetargetvalue="video">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <videoFields
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    class="media-type-toggle cq-dialog-dropdown-showhide-target"
+                                                                    data-showhidetargetvalue="video">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <videoSrc
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                            fieldDescription="Provide a thumbnail image path for the video."
+                                                                            fieldLabel="Video Thumbnail Path"
+                                                                            name="./videoThumbnailPath"/>
+                                                                        <videoSrcType
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Specify the video type (e.g., mp4, YouTube)."
+                                                                            fieldLabel="Video Type"
+                                                                            name="./videoType"/>
+                                                                        <title
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the title text for the media card."
+                                                                            fieldLabel="Vedio Title"
+                                                                            name="./vedioTitle"/>
+                                                                        <description
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                                            fieldDescription="Enter a short description for the media card."
+                                                                            fieldLabel="Vedio Description"
+                                                                            name="./vedioDescription"/>
+                                                                        <buttonText
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the label for the card's CTA button."
+                                                                            fieldLabel="Button Text"
+                                                                            name="./vedioButtonLabel"/>
+                                                                        <buttonLink
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                            fieldDescription="Provide a path or URL for the CTA button."
+                                                                            fieldLabel="Button Link"
+                                                                            name="./vedioButtonLink"/>
+                                                                        <open-new-tab
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            checked="${true}"
+                                                                            fieldDescription="Check to open the link in a new browser tab."
+                                                                            name="./vedioOpenInNewTab"
+                                                                            text="Open New Tab"
+                                                                            uncheckedValue="false"
+                                                                            value="{Boolean}true"/>
+                                                                    </items>
+                                                                </videoFields>
+                                                            </items>
+                                                        </video>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </media>
+                                    </items>
+                                </field>
+                            </mediaField>
+                        </items>
+                    </mediaTab>
+                </items>
+            </mainTab>
+        </items>
+    </content>
+</jcr:root>

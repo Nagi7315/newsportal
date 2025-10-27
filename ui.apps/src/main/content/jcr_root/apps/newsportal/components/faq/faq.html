@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+	 data-sly-call="${clientlib.all @ categories='newsportal.faq'}" />
+
+
+<sly data-sly-test="${resource.hasChildren}" data-sly-list.outer="${resource.getChildren}">
+    <sly data-sly-test="${outer.hasChildren}" data-sly-list.card="${outer.getChildren}">
+
+      <h1>${card.sectionTitle}</h1>
+      <div class="accordion-container">
+        <div class="accordion-header">
+            <span>${card.title}</span>
+            <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p>${card.description @context='html'}</p>
+        </div>
+    </div>
+    </sly>
+</sly>
+
+    

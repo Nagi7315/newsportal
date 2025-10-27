@@ -1,0 +1,39 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+        data-emptytext="${component.title}">
+</div>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+
+<th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+
+<td>Active &#9989</td>
+        </tr>
+        <tr>
+            <td>Value 1,Values</td>
+            <td>Value 2.3-</td>
+            <td>Value 3</td>
+        </tr>
+        <tr>
+            <td>Row 1</td>
+            <td>Row 2</td>
+            <td>Row 3</td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="exportCsvBtn">Import CSV</button>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+<sly data-sly-call="${clientLib.js @ categories='newsportal.table'}"/>

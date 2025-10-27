@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Configuration"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title"
+                name="./title"/>
+            <titleType
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                fieldLabel="Article Title Type"
+                name="./articleTitleType">
+                <items jcr:primaryType="nt:unstructured">
+                    <h1
+                        jcr:primaryType="nt:unstructured"
+                        text="Heading 1"
+                        value="h1"/>
+                    <h2
+                        jcr:primaryType="nt:unstructured"
+                        text="Heading 2"
+                        value="h2"/>
+                    <h3
+                        jcr:primaryType="nt:unstructured"
+                        text="Heading 3"
+                        value="h3"/>
+                    <h4
+                        jcr:primaryType="nt:unstructured"
+                        text="Heading 4"
+                        value="h4"/>
+                </items>
+            </titleType>
+            <category-tag
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/common/tagspicker"
+                fieldLabel="Category Tag"
+                name="./categoryTag"/>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,22 @@
+.bg-light-blue { background-color:lightblue; }
+.bg-dark-blue { background-color: #003366; }
+.bg-grey { background-color: grey;}
+.bg-gradient-grey-white { background: linear-gradient(to right, #6c6868, #ffffff); }
+
+.margin-20 { margin: 20px; }
+.margin-60 { margin: 60px; }
+.margin-90 { margin: 90px; }
+.margin-120 { margin: 120px; }
+.margin-140 { margin: 140px; }
+
+.padding-20 { padding: 20px; }
+.padding-40 { padding: 40px; }
+.padding-120 { padding: 120px; }
+.padding-140 { padding: 140px; }
+
+@media (max-width: 767px) {
+  .margin-120 { margin: 60px; }
+  .margin-140 { margin: 80px; }
+  .padding-120 { padding: 60px; }
+  .padding-140 { padding: 80px; }
+}

@@ -1,0 +1,17 @@
+{
+    "path": [ "/content/newsportal", "/content/dam/newsportal" ],
+    "idpCertAlias": "$[env:SAML_IDP_CERT_ALIAS;default=certalias___1652125559800]",
+    "idpIdentifier": "$[env:SAML_IDP_ID;default=http://www.okta.com/exk4z55r44Jz9C6am5d7]",
+    "idpUrl": "$[env:SAML_IDP_URL;default=https://dev-5511372.okta.com/app/dev-5511372_aemasacloudservice_1/exk4z55r44Jz9C6am5d7/sso/saml]",
+    "serviceProviderEntityId": "$[env:SAML_AEM_ID;default=https://publish-p123-e456.adobeaemcloud.com]",
+    "useEncryption": false,
+    "createUser": true,
+    "userIntermediatePath": "wknd/idp",
+    "synchronizeAttributes":[
+        "firstName=profile/givenName"
+    ],
+    "addGroupMemberships": true,
+    "defaultGroups": [
+        "wknd-users"
+    ]
+}

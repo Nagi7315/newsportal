@@ -1,0 +1,5 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "schedulerName":"article-expairy",
+  "enable":false
+}

@@ -1,0 +1,27 @@
+<div class="single-news" data-sly-test="${properties.columnType=='66-34'}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+              <div data-sly-resource="${'left-container' @resourceType='newsportal/components/container'}"> </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="sidebar">
+              <div data-sly-resource="${'right-container' @resourceType='newsportal/components/container'}"> </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top-news" data-sly-test="${properties.columnType=='50-50'}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 tn-left">
+              <div data-sly-resource="${'left-container' @resourceType='newsportal/components/container'}"> </div>
+            </div>
+            <div class="col-md-6 tn-right">
+              <div data-sly-resource="${'right-container' @resourceType='newsportal/components/container'}"> </div>
+            </div>
+        </div>
+    </div>
+</div>

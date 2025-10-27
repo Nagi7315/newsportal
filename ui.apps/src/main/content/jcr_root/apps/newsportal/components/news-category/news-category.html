@@ -1,0 +1,10 @@
+<sly data-sly-use.newsCategory="com.gofortrainings.newsportal.core.models.NewsCategoryModel"> 
+<div class="sidebar-widget">
+   <h2 class="sw-title">${newsCategory.title}</h2>
+     <div class="category" data-sly-list.key="${newsCategory.childTagMap}">
+       <ul>
+         <li><a href="">${key}</a><span>(${newsCategory.childTagMap[key]})</span></li>                                       
+       </ul>
+      </div>
+</div>
+</sly>

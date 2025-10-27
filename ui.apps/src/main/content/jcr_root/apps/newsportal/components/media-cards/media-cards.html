@@ -1,0 +1,46 @@
+<h2 class="section-heading">${properties.sectionTitle}</h2>
+
+<section class="media-section">
+  <sly data-sly-test="${resource.hasChildren}" data-sly-list.outer="${resource.getChildren}">
+    <sly data-sly-test="${outer.hasChildren}" data-sly-list.card="${outer.getChildren}">
+
+      <div data-type="${card.selectMediaType}">
+
+        <sly data-sly-test="${card.selectMediaType == 'image'}">
+           <div class="media-block">
+            <div class="media-wrapper">
+              <img src="${card.imagePath}" alt="${card.imageAltText}" />
+            </div>
+            <div class="media-content">
+              <h3>${card.ImageTitle}</h3>
+              <div class="desc">
+                <p>${card.ImageDescription}</p>
+              </div>
+              <a href="${card.imageButtonLink}" target="${card.imageOpenInNewTab == 'true' ? '_blank' : '_self'}" rel="${card.openNewTab == 'true' ? 'noopener noreferrer' : ''}" class="learn-more">${card.imageButtonLabel}</a>
+            </div>
+          </div>
+        </sly>
+        <sly data-sly-test="${card.selectMediaType == 'video'}">
+           <!-- Video Block -->
+          <div class="media-block video">
+            <div class="media-wrapper">
+              <video id="restorationVideo" poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+                muted>
+                <source src="${card.videoThumbnailPath}" type="${card.videoType}" />
+                Your browser does not support the video tag.
+              </video>
+              <button class="play-btn" onclick="playVideo()">▶</button>
+            </div>
+            <div class="media-content">
+              <h3>${card.vedioTitle}</h3>
+              <div class="desc">
+                <p>${card.vedioDescription}</p>
+              </div>
+              <a href="${card.vedioButtonLink}" target="${card.vedioOpenInNewTab == 'true' ? '_blank' : '_self'}" class="learn-more"> ${card.vedioButtonLabel}</a>
+            </div>
+          </div>
+        </sly>
+      </div>
+    </sly>
+  </sly>    
+</section>

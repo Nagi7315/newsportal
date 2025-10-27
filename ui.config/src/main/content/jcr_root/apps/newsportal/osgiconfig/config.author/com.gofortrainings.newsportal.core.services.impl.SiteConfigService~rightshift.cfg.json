@@ -1,0 +1,7 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "contactEmail":"test@gmail.com",
+  "siteRootPath":"/content/rightShift",
+  "siteUrl":"RightShift.in",
+  "siteName":"ITC RightShift"
+}

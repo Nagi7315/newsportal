@@ -1,0 +1,17 @@
+<sly data-sly-use.artlicleDetail="com.gofortrainings.newsportal.core.models.ArticleDetailModel" />
+
+<sly data-sly-test="${properties.articleStatus}">
+     <h1>${properties.articleTitle || currentStyle.articleTitle}</h1>
+     <h1>${properties.articleDesc}</h1>
+     <img src=${properties.articleImg}></img>
+</sly>
+${artlicleDetail.description}
+<sly data-sly-use.writerInfoObj="writer-info.html" />
+
+<sly data-sly-call="${writerInfoObj.writerinfo @firstName='Veera',lastName='Jagiri',email='jagiriveera@gmail.com'}" />
+
+<sly data-sly-call="${writerInfoObj.writerinfo @firstName='Nagi',lastName='Jagiri',email='jvnreddy7315@gmail.com'}" />
+
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html" />
+
+<sly data-sly-call="${clientlib.css @categories='newsportal.clientlib'}" />

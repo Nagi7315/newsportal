@@ -1,0 +1,24 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+        data-emptytext="${component.title}">
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+<sly data-sly-call="${clientLib.js @ categories='newsportal.media'}"/>
+<section class="media-section">
+    <div class="media-card">
+        <div class="media-wrapper ${properties.mediaType == 'video' ? 'video' : ''}">
+            <img src="${properties.mediaSrc}" alt="${properties.title}" class="media-img"/>
+            <div class="media-overlay">
+                <p class="overlay-text">${properties.hoverText}</p>
+                <div class="video-icon" data-show="${properties.mediaType == 'video'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+        </div>
+        <div class="media-content">
+            <h3>${properties.title}</h3>
+            <p>${properties.description}</p>
+            <a href="${properties.buttonLink}" class="cta-button"
+            target="${properties.openInNewTab ? '_blank' : ''}">${properties.buttonText}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+#base=js
+jquery-3.4.6.js
+bootstrap.bundle.js
+easing.js
+slick.js
+main.js
+user-list.js
+user-authentication.js

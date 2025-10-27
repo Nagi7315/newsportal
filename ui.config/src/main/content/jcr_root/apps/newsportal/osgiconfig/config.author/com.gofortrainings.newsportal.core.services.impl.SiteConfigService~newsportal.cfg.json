@@ -1,0 +1,7 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "contactEmail":"test@gmail.com",
+  "siteRootPath":"/content/newsportal",
+  "siteUrl":"https://www.newsportal.com",
+  "siteName":" News Portal"
+}

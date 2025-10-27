@@ -1,0 +1,10 @@
+{
+  "operation":"add",
+  "aces":[
+    "type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/newsportal",
+    "type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/dam",
+    "type=allow;privileges=jcr:read;path=/conf/newsportal/settings/wcm/templates",
+    "type=allow;privileges=jcr:read;path=/apps/newsportal"
+  ],
+  "principalName":"newsportal/veera-service-user"
+}

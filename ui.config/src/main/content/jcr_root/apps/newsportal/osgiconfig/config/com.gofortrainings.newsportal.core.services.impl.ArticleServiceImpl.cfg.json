@@ -1,0 +1,6 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "articleRestApi":"https://gorest.co.in/public/v2/posts",
+  "status":true,
+  "cloneId":"5184398"
+}

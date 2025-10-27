@@ -1,0 +1,94 @@
+.media-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.media-card {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.media-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.media-wrapper:hover .media-img {
+  transform: scale(1.05);
+}
+
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.media-wrapper:hover .media-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 1rem;
+}
+
+.video-icon[data-show="true"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-icon {
+  width: 3rem;
+  height: 3rem;
+  fill: white;
+}
+
+.media-content {
+  padding: 1rem;
+}
+
+.media-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.media-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+}
+
+.cta-button {
+  background: #004990;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 768px) {
+  .media-wrapper:hover .media-overlay {
+    opacity: 0; /* Disable hover on mobile */
+  }
+}

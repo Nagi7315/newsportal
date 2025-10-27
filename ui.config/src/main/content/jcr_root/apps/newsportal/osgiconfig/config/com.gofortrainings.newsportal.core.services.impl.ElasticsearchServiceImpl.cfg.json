@@ -1,0 +1,5 @@
+{
+   "serverApiUsername": "elastic",
+   "serverApiPassword": "62o4svas8ISYhMXcqA9yOltG",
+   "elasticSearchEndpointUrl": "https://elastic-environment.es.asia-south1.gcp.elastic-cloud.com"
+}

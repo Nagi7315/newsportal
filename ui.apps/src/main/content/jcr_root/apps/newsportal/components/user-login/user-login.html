@@ -1,0 +1,42 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<div>
+  <h1 class="text-center">${properties.title}</h1>
+  <button class="btn" data-toggle="modal" data-target="#loginModal" id="userBtn">Login</button>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100" id="gtModelTitle">Login Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" id="formid" novalidate="" method="post">
+          <div class="row">
+            <div class="form-group col-md-8">
+              <input type="text" name="name" pattern="[a-zA-Z ]+" minlength="4" maxlength="20" class="form-control" id="userName" placeholder="Enter UserName *" required="">
+              <div class="invalid-feedback">User Name is mandatory field (min-3,max-20 Alphabet). </div>
+            </div>
+            <div class="form-group col-md-8">
+              <input type="text" name="name" class="form-control" id="password" placeholder="  Enter Password *" required="">
+              <div class="invalid-feedback"> Password is mandatory field (min-3,max-20 Alphabet). </div>
+            </div>
+          </div>
+          <div class="modal-footer ">
+            <button type="submit" class="btn btn-primary" id="login">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const loginModal = urlParams.get('loginModal');
+  if (loginModal === 'true') {
+    $("#loginModal").modal('show');
+  }
+</script>

@@ -1,0 +1,17 @@
+<sly data-sly-use.artlicleDetail="com.gofortrainings.newsportal.core.models.ArticleDetailsExampleModel" />
+<sly data-sly-test="${artlicleDetail.articleTitle && artlicleDetail.articleDesc}">
+<div class="sn-container">
+                            <div class="sn-img">
+                                <img src="${artlicleDetail.articleImg}" alt=""/>
+                            </div>
+                            <div class="sn-content">
+                                <h1 class="sn-title">${artlicleDetail.articleTitle}</h1>
+                                <p>
+                                   ${artlicleDetail.articleDesc}
+                                </p>
+                            </div>
+                        </div>
+
+</sly>
+
+

@@ -1,0 +1,4 @@
+{
+   "userRest_API" : "http://bhasakaportals-dev.eba-rgtdsdg2.us-east-1.elasticbeanstalk.com/portals/user/secure/list",
+   "usersUpdateRest_API" : "http://bhasakaportals-dev.eba-rgtdsdg2.us-east-1.elasticbeanstalk.com/portals/user/save"
+}

@@ -1,0 +1,17 @@
+<sly data-sly-use.category="com.gofortrainings.newsportal.core.models.InThisCategoryModel">
+<div class="sidebar">
+   <div class="sidebar-widget">
+      <h1 class="sw-title">${category.title}</h1>
+          <div class="news-list" data-sly-list.article="${category.articleList}">
+              <div class="nl-item">
+                  <div class="nl-img">
+                      <img src="${article.articleImg}" />
+                   </div>
+                   <div class="nl-title">
+                      <a href="">${article.articleTitle}</a>
+                    </div>
+               </div>
+           </div>
+     </div>
+</div>
+</sly>

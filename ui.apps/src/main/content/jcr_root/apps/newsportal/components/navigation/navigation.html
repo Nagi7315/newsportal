@@ -1,0 +1,32 @@
+<sly data-sly-use.navigation="com.adobe.cq.wcm.core.components.models.Navigation" > </sly>
+<div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto" data-sly-list.nav="${navigation.items}">
+                            <a data-sly-test="${nav.children.size==0}" href="${nav.page.path}.html" class="nav-item nav-link">${nav.page.title}</a>
+                            <div data-sly-test="${nav.children.size>0}" class="nav-item dropdown">
+                                <a href="${nav.page.path}.html" class="nav-link dropdown-toggle" data-toggle="dropdown">${nav.page.title}</a>
+                                <div data-sly-list.navChild="${nav.children}" class="dropdown-menu">
+                                    <a href="${navChild.page.path}.html" class="dropdown-item">${navChild.page.title}</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="social ml-auto">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
